@@ -15,7 +15,11 @@ import java.util.UUID;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:5174"})
+@CrossOrigin(origins = {
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "https://fadelink.netlify.app"
+})
 @RestController
 public class UploadController {
 
@@ -49,8 +53,10 @@ public class UploadController {
             }
 
             String token = UUID.randomUUID().toString();
-            String viewLink = "http://localhost:8080/file/" + token;
-            String downloadLink = "http://localhost:8080/download/" + token;
+            String BASE_URL = "https://fadelink-backend-production.up.railway.app";
+
+            String viewLink = BASE_URL + "/file/" + token;
+            String downloadLink = BASE_URL + "/download/" + token;
             LocalDateTime expTime = LocalDateTime.now().plusHours(3);
 
             FileData fileData = new FileData(fileBytesList, originalNames, expTime, zipName);
