@@ -1,16 +1,16 @@
 package org.example.filestolink;
 
-import java.time.LocalDateTime;
 import java.util.List;
+import java.time.ZonedDateTime;
 
 public class FileData {
 
     private List<byte[]> fileBytes;
     private List<String> originalNames;
-    private LocalDateTime expTime;
+    private ZonedDateTime expTime;
     private String zipName;
 
-    public FileData(List<byte[]> fileBytes, List<String> originalNames, LocalDateTime expTime, String zipName) {
+    public FileData(List<byte[]> fileBytes, List<String> originalNames, ZonedDateTime expTime, String zipName) {
         this.fileBytes = fileBytes;
         this.originalNames = originalNames;
         this.expTime = expTime;
@@ -19,6 +19,6 @@ public class FileData {
 
     public List<byte[]> getFileBytes() { return fileBytes; }
     public List<String> getOriginalNames() { return originalNames; }
-    public LocalDateTime getExpTime() { return expTime; }
+    public ZonedDateTime getExpTime() { return expTime; }
     public String getZipName() { return zipName; }
 }

@@ -14,6 +14,8 @@ import java.util.List;
 import java.util.UUID;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 @CrossOrigin(origins = {
         "http://localhost:5173",
@@ -57,7 +59,7 @@ public class UploadController {
 
             String viewLink = BASE_URL + "/file/" + token;
             String downloadLink = BASE_URL + "/download/" + token;
-            LocalDateTime expTime = LocalDateTime.now().plusHours(3);
+            ZonedDateTime expTime = ZonedDateTime.now(ZoneId.of("Asia/Kolkata")).plusHours(3);
 
             FileData fileData = new FileData(fileBytesList, originalNames, expTime, zipName);
             map.put(token, fileData);
@@ -85,7 +87,7 @@ public class UploadController {
 
         FileData data = map.get(token);
 
-        if (LocalDateTime.now().isAfter(data.getExpTime())) {
+        if (ZonedDateTime.now(ZoneId.of("Asia/Kolkata")).isAfter(data.getExpTime())) {
             map.remove(token);
             return ResponseEntity.badRequest().body("Link expired");
         }
@@ -202,7 +204,7 @@ public class UploadController {
 
         FileData data = map.get(token);
 
-        if (LocalDateTime.now().isAfter(data.getExpTime())) {
+            if (ZonedDateTime.now(ZoneId.of("Asia/Kolkata")).isAfter(data.getExpTime())) {
             map.remove(token);
             return ResponseEntity.badRequest().body("Link expired");
         }
@@ -240,7 +242,7 @@ public class UploadController {
 
         FileData data = map.get(token);
 
-        if (LocalDateTime.now().isAfter(data.getExpTime())) {
+            if (ZonedDateTime.now(ZoneId.of("Asia/Kolkata")).isAfter(data.getExpTime())) {
             map.remove(token);
             return ResponseEntity.badRequest().body("Link expired");
         }
