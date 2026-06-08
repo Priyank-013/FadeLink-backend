@@ -17,11 +17,7 @@ import java.util.zip.ZipOutputStream;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
-@CrossOrigin(origins = {
-        "http://localhost:5173",
-        "http://localhost:5174",
-        "https://fadelink.netlify.app"
-})
+@CrossOrigin(origins = "*")
 @RestController
 public class UploadController {
 
