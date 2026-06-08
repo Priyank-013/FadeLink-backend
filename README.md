@@ -34,11 +34,3 @@ https://fadelink-backend-production.up.railway.app/
 
 https://github.com/Priyank-013/FadeLink-frontend
 
-## Future Improvements
-
-* User authentication and authorization
-* Password-protected links
-* Custom expiration settings
-* Cloud storage integration
-* Download analytics
-* Storage optimization
