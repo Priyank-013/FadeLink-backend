@@ -32,5 +32,5 @@ https://fadelink-backend-production.up.railway.app/
 
 ### Frontend
 
-https://github.com/Priyank-013/FadeLink-frontend
+[FadeLink-frontend](https://github.com/Priyank-013/FadeLink-frontend)
 
