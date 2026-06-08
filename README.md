@@ -2,7 +2,7 @@
 
 Backend services for FadeLink, a file sharing platform that allows users to upload multiple files and generate a single shareable link with automatic expiration.
 
-## Live Frontend
+## Live Application
 
 https://fadelink.netlify.app/
 
